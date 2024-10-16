@@ -14,7 +14,7 @@ type Question = {
 
 // above
 export default function Document() {
-  // modified from example slides 
+   
   const [questions, setQuestions] = useState<Question[]>([]);
   // above from online resource example 
   useEffect(() => {
