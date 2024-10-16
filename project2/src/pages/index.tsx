@@ -1,33 +1,34 @@
-import Image from "next/image";
-import localFont from "next/font/local";
+import Layout from "./layout";
 
-function Easy(){
 
+
+
+
+function List(){
+   window.location.href = "easylist/easylist";
 }
-function Medium(){
+function game(){
   
 }
-function Hard(){
-  
-}
+
 
 export default function Home() {
  
   return (
-    <div>
-       <button onClick={Easy}>
-     Easy 
+    <Layout>
+       <button onClick={List}>
+     View all cards in database
   </button>
+  <br></br>
 
-  <button onClick={Medium}>
+  <button onClick={game}>
      Medium 
   </button>
+  <br></br>
 
-  <button onClick={Hard}>
-     Hard
-  </button>
 
-    </div>
+
+    </Layout>
    
     
 
