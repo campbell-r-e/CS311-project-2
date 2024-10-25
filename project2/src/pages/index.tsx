@@ -1,37 +1,50 @@
-import Layout from "./layout";
+
 
 
 
 
 
 function List(){
-   window.location.href = "easylist/easylist";
+   window.location.href = "list/list";
 }
 function game(){
-  
+   window.location.href = "game/game";
 }
 
 
 export default function Home() {
  
   return (
-    <Layout>
-       <button onClick={List}>
-     View all cards in database
+   <div>
+      <div id="title">
+      <h1>Ham Radio Technician Class Flash Cards</h1>
+      </div>
+      
+   
+ 
+      <div className = "custom-flex h-56 row-auto columns-2 content-center ...">
+       
+         <div> <button onClick={List}>
+     View all cards &nbsp;
   </button>
-  <br></br>
+  
+  </div>
 
-  <button onClick={game}>
-     Medium 
-  </button>
-  <br></br>
+     
+  <div className="text-color-bg-red-500"> <button onClick={game}>
+    Game
+  </button></div>
 
+ 
 
+</div>
+</div>
 
-    </Layout>
+   
    
     
 
     
     );
 }
+
