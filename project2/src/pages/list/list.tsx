@@ -6,7 +6,6 @@ type Question = {
   Prompts: string;
   Answer: string;
   Understood: string;
-  time: string;
 };
 
 
@@ -21,6 +20,7 @@ export default function Document() {
     fetch('/data.json') //from online
       .then((response) => response.json()) //from online 
       .then((data) => setQuestions(data['Easy Questions'])) // from online example
+      
    
     
    
