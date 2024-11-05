@@ -1,13 +1,15 @@
-datasource db {
-  provider = "postgresql" 
-  url      = env("DATABASE_URL")
-}
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
 }
 
-model Flashcard {
+datasource db {
+ provider = "sqlite"
+ url      = env("DATABASE_URL")
+}
+ model Flashcard {
   id                  Int        @id @default(autoincrement())
   prompt              String
   answer              String
