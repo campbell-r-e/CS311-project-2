@@ -1,18 +1,10 @@
+import Link from "next/link";
 import Layout from "../layout";
 
 
 
 
 
-function Easy(){
-   
-}
-function Medium(){
-  
-}
-function Hard(){
-  
-}
 
 export default function Home() {
  
@@ -21,29 +13,29 @@ export default function Home() {
       <div id = "w"className="text-red-800 content-center">
       <h1>To play select a level</h1>
       <div className="h-56 row-auto columns-3 content-center ..." >
-         <div> <button onClick={Easy}>
-     Easy 
-  </button>
+      <Link href ={"/easy/easy"}>
+    Easy
+  </Link>
   </div>
      
   <br></br>
 
   
   <div>
-  <button onClick={Medium}>
-     Medium 
-  </button>
+  <Link href ={"/medium/medium"}>
+    Medium
+  </Link>
   </div>
   <br></br>
  <div>
- <button onClick={Hard}>
-     Hard
-  </button>
+ <Link href ={"/hard/hard"}>
+   Hard
+  </Link>
  </div>
   
       </div>
        
-</div>
+
     </Layout>
    
     
