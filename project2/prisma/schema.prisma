@@ -1,37 +1,40 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
- provider = "sqlite"
- url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model User {
-  id                  Int         @id @default(autoincrement())
-  username            String      @unique
-  flashcards          Flashcard[]
+  id       Int    @id @default(autoincrement())
+  username String @unique
 }
 
 model Flashcard {
-  id                  Int        @id @default(autoincrement())
-  prompt              String
-  answer              String
-  amountUnderstood    Int        @default(0) 
-  nextScheduledView   DateTime
-  points              Int        @default(1)
-  difficultyId        Int
-  difficulty          Difficulty @relation(fields: [difficultyId], references: [id])
-  userId              Int
-  user                User      @relation(fields: [userId], references: [id])
+  id           Int        @id @default(autoincrement())
+  prompt       String
+  answer       String
+  points       Int        @default(1)
+  difficultyId Int
+  difficulty   Difficulty @relation(fields: [difficultyId], references: [id])
+  questionId   String
 }
 
 model Difficulty {
-  id         Int         @id @default(autoincrement())
-  name       String      @unique 
-  flashcards Flashcard[]
+  id   Int    @id @default(autoincrement())
+  name String @unique
+
+  Flashcard Flashcard[]
+}
+
+model ViewStats {
+  id                Int      @id @default(autoincrement())
+  amountUnderstood  Int      @default(0)
+  nextScheduledView DateTime
+  flashcardId       Int
 }
