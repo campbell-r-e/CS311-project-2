@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "Users" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "username" TEXT NOT NULL,
+    "stats" INTEGER NOT NULL,
+    CONSTRAINT "Users_stats_fkey" FOREIGN KEY ("stats") REFERENCES "ViewStats" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);
