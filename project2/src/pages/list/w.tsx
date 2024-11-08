@@ -40,30 +40,24 @@ const App = () => {
 
   return (
     <div className="flex justify-center items-center h-screen space-x-4 text-red-700 "> <ul style={{ width: "400px", height: "700px", overflowY: "scroll" }}>
-      <br></br>
+    
     {questions.map((question) => (
       <div 
       key={question.id}
       className="flex justify-center items-center  border-[5px] h-75 w-70 border-red-500 space-x-4">
         <li>Prompt:
         {question.prompt} 
-        <br></br>
-        <br></br>
+        
         Answer:{question.answer}</li>
-        <br></br>
-        <br></br>
+        
         <div>
-          <br></br>
         </div>
          </div>
          
       
     ))} 
   </ul>
-  <br></br>
-  <br></br>
-  <br></br>
-  <br></br>
+ 
   </div>
     
      

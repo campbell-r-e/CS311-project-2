@@ -3,7 +3,7 @@
 
 import React, { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
-
+import Layout from "../layout";
 
 type Question = {
   id: number;
@@ -50,53 +50,77 @@ export default function Home(){
     }
   };
 
+
+
+
+  const done = () => {
+  
+  };
+
   return (
-    
-    <div className="flex justify-center items-center h-screen space-x-4 text-red-700 "> 
+    <Layout>
+
       
-       {questions.length > 0 && (
-        <div className="border-[5px] border-red-500 p-4">
-          <h3>Prompt: {questions[currentIndex].prompt}</h3>
-          <p>Answer: {questions[currentIndex].answer}</p>
+      <div id='nav' className="flex justify-center items-center  space-x-4 text-red-700 ">
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+   <button onClick={handle}>
+     Easy
+     </button>
+     <span>&nbsp;</span>
+     <span>&nbsp;</span>
+
+
+    <button onClick={handle}>
+       Medium
+    </button>
+    <span>&nbsp;</span>
+    <span>&nbsp;</span>
+
+    <button onClick={handle}>
+   Hard
+   </button>
+
+
+   <button onClick={handle}>
+   done
+   </button>
+
+   <span>&nbsp;</span>
+   <span>&nbsp;</span>
+    </div>
+
+
+<div className="flex justify-center items-center h-screen space-x-4 text-red-700 "> 
+      
+      {questions.length > 0 && (
+       <div className="border-[5px] border-red-500 p-4">
+         <h3>Prompt: {questions[currentIndex].prompt}</h3>
+         <p>Answer: {questions[currentIndex].answer}</p>
 
 
 
-        </div>
-        
-        
-      )}
-      <br></br>
-      <div>
-
-
-
-        <div>
-      <div  className='text-center '>
-      <h1>All Cards in Database</h1>
-      </div>
+       </div>
+       
+       
+     )}
+     <br></br>
     
-    <br></br>
+
+
+
    
-   <br></br>
-  </div>
-</div>
-
-<div>
-<button onClick={handle}>
-Easy
-</button>
-
-<button onClick={handle}>
-Medium
-</button>
-
-<button onClick={handle}>
-Hard
-</button>
-</div>
-
+ </div>
+ 
+ 
+ 
     
-  </div>
+   
+    </Layout>
+    
     
      
     
