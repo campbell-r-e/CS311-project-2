@@ -4,12 +4,12 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 
-export default async function handler(req,res) {
+export default async function handler(req,res,prompts,answers) {
   try{
     const user = await prisma.user.create({
         data: {
-          email: 'elsa@prisma.io',
-          name: 'Elsa Prisma',
+          prompt: prompts,
+          answer: answers,
         },
       })
     res.status(200).json(user);// from online 
