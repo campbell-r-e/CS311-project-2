@@ -6,12 +6,12 @@ const prisma = new PrismaClient();
 
 export default async function handler(req,res) {
   try{
-    const totalCount = await prisma.flashcard.count({
+    const understood_percent = await prisma.viewStats.findUnique({
         where: {
-          status: 'ACTIVE',
-        },
-      });
-    res.status(200).json(totalCount);// from online 
+           id:1,
+           },
+       })
+    res.status(200).json(understood_percent);// from online 
     
     
     

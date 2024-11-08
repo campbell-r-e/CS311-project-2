@@ -16,6 +16,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/questions.js", "src/pages/list/w.tsx", "src/pages/list/w.tsx", "src/pages/api/login.js", "src/pages/login/login.jsx", "src/pages/register/register.jsx", "src/pages/game/slider.tsx", "src/pages/api/understood.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/api/questions.js", "src/pages/list/w.tsx", "src/pages/list/w.tsx", "src/pages/api/login.js", "src/pages/login/login.jsx", "src/pages/register/register.jsx", "src/pages/game/slider.tsx", "src/pages/api/understood.ts"],
   "exclude": ["node_modules"]
 }
