@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
    
-    const generatedQuestions = Array.from({ length:questions.length}, (_, index) => ({
+    const generatedQuestions = Array.from({ length:10}, (_, index) => ({
       id: index,
       prompt: faker.lorem.sentence(),
       answer: faker.lorem.word(),
@@ -42,8 +42,10 @@ const App = () => {
     <div className="flex justify-center items-center h-screen space-x-4 text-red-700 "> <ul style={{ width: "400px", height: "700px", overflowY: "scroll" }}>
       <br></br>
     {questions.map((question) => (
-      <div className="flex justify-center items-center  border-[5px] h-75 w-70 border-red-500 space-x-4">
-        <li key={question.id}>Prompt:
+      <div 
+      key={question.id}
+      className="flex justify-center items-center  border-[5px] h-75 w-70 border-red-500 space-x-4">
+        <li>Prompt:
         {question.prompt} 
         <br></br>
         <br></br>

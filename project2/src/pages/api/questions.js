@@ -3,7 +3,7 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-var size =0;
+
 export default async function handler(req,res) {
   try{
     const questions = await prisma.flashcard.findMany();
