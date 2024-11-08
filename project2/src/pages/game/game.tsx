@@ -52,14 +52,13 @@ export default function Home(){
     } else {
       setCurrentIndex(0); // Loop back to the first question
     }
+
+    mathematics();
   };
 
 
 
 
-  const done = () => {
-  
-  };
 
   
 
@@ -84,6 +83,11 @@ export default function Home(){
   }, []);
 
   var num_records= count;
+  function mathematics(){
+     var done = currentIndex/num_records;
+     
+
+  }
   
   
 
