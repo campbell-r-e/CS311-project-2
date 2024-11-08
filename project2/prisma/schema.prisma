@@ -14,12 +14,12 @@ model Flashcard {
   answer       String
   points       Int        @default(1)
   difficultyId Int
-  difficulty   Difficulty @relation(fields: [difficultyId], references: [id])
+  Difficulty   Difficulty @relation(fields: [difficultyId], references: [id])
 }
 
 model Difficulty {
   id   Int    @id @default(autoincrement())
-  name String @unique
+  name String
 
   Flashcard Flashcard[]
 }

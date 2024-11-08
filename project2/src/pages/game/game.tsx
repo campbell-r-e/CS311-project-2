@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import Layout from "../layout";
 
 
@@ -8,33 +8,39 @@ import Layout from "../layout";
 
 export default function Home() {
  
+  function Easy(): void {
+    
+  }
+
+
+
+  function Medium(): void {
+    
+  }
+
+
+
+  function Hard(): void {
+    
+  }
+
   return (
     <Layout>
-      <div id = "w"className="text-red-800 content-center">
-      <h1>To play select a level</h1>
-      <div className="h-56 row-auto columns-3 content-center ..." >
-      <Link href ={"/easy/easy"}>
-    Easy
-  </Link>
-  </div>
-     
-  <br></br>
 
-  
-  <div>
-  <Link href ={"/medium/medium"}>
-    Medium
-  </Link>
-  </div>
-  <br></br>
- <div>
- <Link href ={"/hard/hard"}>
-   Hard
-  </Link>
- </div>
-  
+      <div>
+      <button onClick={Easy}>
+      Easy
+    </button>
+
+    <button onClick={Medium}>
+      Medium
+    </button>
+
+    <button onClick={Hard}>
+      Hard
+    </button>
       </div>
-       
+     
 
     </Layout>
    
