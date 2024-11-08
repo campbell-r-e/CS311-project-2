@@ -27,7 +27,7 @@ model Difficulty {
 model ViewStats {
   id                Int      @id @default(autoincrement())
   amountUnderstood  Int      @default(0)
-  flashcardId       Int
+ 
  
 }
 

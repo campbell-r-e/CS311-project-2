@@ -10,10 +10,14 @@ type Question = {
   prompt: string;
   answer: string;
 };
+type Count = {
+  totalCount:number;
+}
 
 export default function Home(){
   const [questions, setQuestions] = useState<Question[]>([]);
    const [currentIndex, setCurrentIndex] = useState(0);
+   const [count, setcount] = useState<number>(0); 
   useEffect(() => {
    
     const generatedQuestions = Array.from({ length:10}, (_, index) => ({
@@ -56,6 +60,32 @@ export default function Home(){
   const done = () => {
   
   };
+
+  
+
+  useEffect(() => {
+   
+  
+
+    async function fetchcount() {
+      try {
+        const response = await fetch('/api/questions');
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setcount(data);
+      } catch (error) {
+        console.error("Failed to fetch questions:", error);
+      }
+    }
+
+    fetchcount();
+  }, []);
+
+  var num_records= count;
+  
+  
 
   return (
     <Layout>
