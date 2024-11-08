@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 
 export default async function handler(req,res) {
   try{
-    const totalCount = await prisma.modelName.count({
+    const totalCount = await prisma.flashcard.count({
         where: {
           status: 'ACTIVE',
         },

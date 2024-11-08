@@ -4,15 +4,14 @@
 import React, { useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
 import Layout from "../layout";
+import handler from "../api/stat"
 
 type Question = {
   id: number;
   prompt: string;
   answer: string;
 };
-type Count = {
-  totalCount:number;
-}
+
 
 export default function Home(){
   const [questions, setQuestions] = useState<Question[]>([]);
@@ -82,9 +81,11 @@ export default function Home(){
     fetchcount();
   }, []);
 
-  var num_records= count;
+  const num_records= count;
   function mathematics(){
-     var done = currentIndex/num_records;
+     const done = currentIndex/num_records *100;
+
+     handler(done);
      
 
   }
