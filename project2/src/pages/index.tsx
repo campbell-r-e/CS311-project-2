@@ -11,6 +11,10 @@ function game(){
    window.location.href = "game/game";
 }
 
+function add(){
+   window.location.href = "Add/add";
+}
+
 
 export default function Home() {
  
@@ -31,12 +35,27 @@ export default function Home() {
   </div>
 
      
-  <div className="text-color-bg-red-500"> <button onClick={game}>
+  <div className="text-color-bg-red-500"> 
+   <button onClick={game}>
     Game
-  </button></div>
+  </button>
+
+  
+  
+  
+  </div>
 
  
+     
+  <div className="text-color-bg-red-500"> 
+   <button onClick={add}>
+    add cards
+  </button>
 
+  
+  
+  
+  </div>
 </div>
 </div>
 

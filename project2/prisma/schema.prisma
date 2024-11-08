@@ -13,7 +13,7 @@ model Flashcard {
   prompt       String
   answer       String
   points       Int        @default(1)
-  difficultyId Int
+  difficultyId Int        @default(1)
   Difficulty   Difficulty @relation(fields: [difficultyId], references: [id])
 }
 
