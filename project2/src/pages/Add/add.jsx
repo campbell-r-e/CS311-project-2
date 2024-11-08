@@ -27,8 +27,35 @@ export default function Home() {
   const handleSubmit = () => {
     setSubmittedPrompt(prompt);
     setSubmittedAnswer(answer);
-    
+
+
+
   };
+  async function updates(){
+
+ 
+    
+ 
+   
+  
+
+         
+    try {
+      const response = await fetch('/api/create');
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setpercent(data.amountUnderstood);
+    } catch (error) {
+      console.error("Failed to fetch questions:", error);
+    }
+   return percent
+
+
+  
+  
+}
  
     return (
       <div>
