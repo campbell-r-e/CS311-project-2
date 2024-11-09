@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import Layout from "../layout";
 
 export default function Home() {
 
@@ -11,11 +12,10 @@ export default function Home() {
   const [prompt, setPrompt] = useState("");
   const [answer, setAnswer] = useState("");
 
-  // State to hold the submitted values
-  const [submittedPrompt, setSubmittedPrompt] = useState("");
-  const [submittedAnswer, setSubmittedAnswer] = useState("");
 
-  // Handlers to update the state when text fields change
+ 
+
+ 
   const handlePromptChange = (event) => {
     setPrompt(event.target.value);
   };
@@ -25,9 +25,9 @@ export default function Home() {
   };
 
   const handleSubmit = () => {
-    setSubmittedPrompt(prompt);
-    setSubmittedAnswer(answer);
-
+    updates();
+    setAnswer("");
+    setPrompt("");
 
 
   };
@@ -36,21 +36,30 @@ export default function Home() {
  
     
  
-   
+    try {
+      const response = await fetch("/api/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ 
+          prompts:prompt,
+          answers:answer,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error("Failed to update");
+      }
+  
+      const data = await response.json();
+      console.log("Update response:", data);
+    } catch (error) {
+      console.error("Error updating amount understood:", error);
+    }
   
 
-         
-    try {
-      const response = await fetch('/api/create');
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      setpercent(data.amountUnderstood);
-    } catch (error) {
-      console.error("Failed to fetch questions:", error);
-    }
-   return percent
+     
 
 
   
@@ -58,6 +67,7 @@ export default function Home() {
 }
  
     return (
+      <Layout>
       <div>
        <br></br>
        <div>
@@ -92,10 +102,12 @@ export default function Home() {
       
     
       </div>
+
+      </Layout>
      
       
   
       
       );
   }
-  // example from online resource 
+  //modified from online resource 

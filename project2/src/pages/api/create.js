@@ -4,9 +4,19 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 
-export default async function handler(req,res,prompts,answers) {
+export default async function handler(req,res) {
+
+  // found online to fix issue with calling function
   try{
-    const user = await prisma.user.create({
+    const { prompts, answers } = req.body;
+
+    if (!prompts || !answers) {
+      return res.status(400).json({ error: "Prompt and answer are required" });
+    }
+    //
+
+
+    const user = await prisma.flashcard.create({
         data: {
           prompt: prompts,
           answer: answers,

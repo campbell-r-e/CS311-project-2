@@ -61,7 +61,7 @@ export default function Home(){
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
-      setCurrentIndex(0); // Loop back to the first question
+      setCurrentIndex(0); 
     }
    updates();
   

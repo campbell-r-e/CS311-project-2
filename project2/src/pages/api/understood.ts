@@ -1,4 +1,4 @@
-// src/pages/api/questions.ts
+
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 
